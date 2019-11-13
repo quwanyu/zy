@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+	<style>
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		#tabs {
+			width: 1000px;
+			border: 1px solid;
+			display: flex;
+			justify-content: space-between;
+		}
+		.tabs_box {
+			width: 500px;
+			margin-right: 30px;
+			float: left;
+		}
+		.tabs {
+			display: flex;
+		}
+		.tabs li {
+			padding: 10px;
+			padding-left: 30px;
+			font-size: 18px;
+			background: url('images/batu.png') no-repeat 10px;
+			cursor: pointer;
+		}
+		.tabs .cur {
+			color: #046fbb;
+		}
+		.contents div {
+			height: 200px;
+			font-size: 14px;
+			line-height: 1.5;
+			display: none;
+		}
+		.contents .show {
+			display: block;
+		}
+	</style>
+<body>
+	<div id="tabs1" class="tabs_box">
+		<div id="tabs1" class="tabs_box">
+			<ul class="tabs">
+				<li class="cur">PHP</li>
+				<li>MYSQL</li>
+				<li>Ajax</li>
+			</ul>
+			<div class="contents">
+				<div class="show">PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（标准通用标记语言下的一个应用）文档中去执行，执行效率比完全生成HTML标记的CGI要高许多；PHP还可以执行编译后代码，编译可以达到加密和优化代码运行，使代码运行更快。</div>
+				<div>MySQL是一个关系型数据库管理系统，原本是一个开放源码的关系数据库管理系统，原开发者为瑞典的MySQL AB公司，该公司于2008年被昇阳微系统（Sun Microsystems）收购。2009年，甲骨文公司（Oracle）收购昇阳微系统公司，MySQL成为Oracle旗下产品。MySQL在过去由于性能高、成本低、可靠性好，已经成为最流行的开源数据库，因此被广泛地应用在Internet上的中小型网站中。随着MySQL的不断成熟，它也逐渐用于更多大规模网站和应用。非常流行的开源软件组合LAMP中的“M”指的就是MySQL。</div>
+				<div>Ajax（Asynchronous JavaScript and XML），直译为“异步的JavaScript与XML技术”，是一种创建交互式网页应用的网页开发技术，用于创建快速动态网页，由杰西·詹姆士·贾瑞特所提出。与传统的Web应用相比，Ajax通过浏览器与服务器进行少量的数据交换就可以实现网页的异步更新，在不重新加载整个网页的情况下，即可对网页进行更新。</div>
+			</div>
+		</div>
+	</div>
+	<div id="tabs2" class="tabs_box">
+		<div id="tabs1" class="tabs_box">
+			<ul class="tabs">
+				<li class="cur">PHP</li>
+				<li>MYSQL</li>
+				<li>Ajax</li>
+			</ul>
+			<div class="contents">
+				<div class="show">PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（标准通用标记语言下的一个应用）文档中去执行，执行效率比完全生成HTML标记的CGI要高许多；PHP还可以执行编译后代码，编译可以达到加密和优化代码运行，使代码运行更快。</div>
+				<div>MySQL是一个关系型数据库管理系统，原本是一个开放源码的关系数据库管理系统，原开发者为瑞典的MySQL AB公司，该公司于2008年被昇阳微系统（Sun Microsystems）收购。2009年，甲骨文公司（Oracle）收购昇阳微系统公司，MySQL成为Oracle旗下产品。MySQL在过去由于性能高、成本低、可靠性好，已经成为最流行的开源数据库，因此被广泛地应用在Internet上的中小型网站中。随着MySQL的不断成熟，它也逐渐用于更多大规模网站和应用。非常流行的开源软件组合LAMP中的“M”指的就是MySQL。</div>
+				<div>Ajax（Asynchronous JavaScript and XML），直译为“异步的JavaScript与XML技术”，是一种创建交互式网页应用的网页开发技术，用于创建快速动态网页，由杰西·詹姆士·贾瑞特所提出。与传统的Web应用相比，Ajax通过浏览器与服务器进行少量的数据交换就可以实现网页的异步更新，在不重新加载整个网页的情况下，即可对网页进行更新。</div>
+			</div>
+		</div>
+	</div>
+	<div id="tabs3" class="tabs_box">
+		<div id="tabs1" class="tabs_box">
+			<ul class="tabs">
+				<li class="cur">PHP</li>
+				<li>MYSQL</li>
+				<li>Ajax</li>
+			</ul>
+			<div class="contents">
+				<div class="show">PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”）是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（标准通用标记语言下的一个应用）文档中去执行，执行效率比完全生成HTML标记的CGI要高许多；PHP还可以执行编译后代码，编译可以达到加密和优化代码运行，使代码运行更快。</div>
+				<div>MySQL是一个关系型数据库管理系统，原本是一个开放源码的关系数据库管理系统，原开发者为瑞典的MySQL AB公司，该公司于2008年被昇阳微系统（Sun Microsystems）收购。2009年，甲骨文公司（Oracle）收购昇阳微系统公司，MySQL成为Oracle旗下产品。MySQL在过去由于性能高、成本低、可靠性好，已经成为最流行的开源数据库，因此被广泛地应用在Internet上的中小型网站中。随着MySQL的不断成熟，它也逐渐用于更多大规模网站和应用。非常流行的开源软件组合LAMP中的“M”指的就是MySQL。</div>
+				<div>Ajax（Asynchronous JavaScript and XML），直译为“异步的JavaScript与XML技术”，是一种创建交互式网页应用的网页开发技术，用于创建快速动态网页，由杰西·詹姆士·贾瑞特所提出。与传统的Web应用相比，Ajax通过浏览器与服务器进行少量的数据交换就可以实现网页的异步更新，在不重新加载整个网页的情况下，即可对网页进行更新。</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function tab(id) {
+				var box=document.getElementById(id);
+				var ul=box.getElementsByClassName('tabs')[0];
+				var lis=ul.getElementsByTagName('li');
+				var div=box.getElementsByClassName('contents')[0];
+				var divs=div.getElementsByTagName('div');
+				for (var i=0; i<lis.length; i++) {
+						lis[i].index=i;
+					lis[i].onclick=function () {
+						for(var i=0; i<lis.length; i++) {
+							lis[i].removeAttribute('class');
+						}
+						for(var i=0; i<divs.length; i++){
+							divs[i].removeAttribute('class');
+						}
+						this.className='cur';
+						divs[this.index].className='show';
+					}
+				}
+			}
+			tab('tabs1');
+			tab('tabs2');
+			tab('tabs3');
+	</script>
+</body>
+</html>
