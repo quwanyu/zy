@@ -92,6 +92,7 @@
 			background: #000;
 			color: #fff;
 		}
+
 		#carousel02.box {
 			width: 700px;
 			height: 400px;
@@ -103,19 +104,7 @@
 		#carousel02 .imgs {
 			position: absolute;
 			top: 0;
-			left: 0;
-		}
-		#carousel02 .imgs li {
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0;
-			z-index: -1;
-			transition: .5s linear;
-		}
-		#carousel02 .imgs .show {
-			opacity: 1;
-			z-index: 0;
+			display: flex;
 		}
 		#carousel02 .imgs img {
 			width: 700px;
@@ -169,7 +158,6 @@
 			border: 3px solid #fff;
 			margin: 0 2px;
 			cursor: pointer;
-			transition: .5s linear;
 		}
 		#carousel02 .dots .act {
 			background: red;
@@ -180,11 +168,14 @@
 <body>
 	<div id="carousel01" class="box">
 		<ul class="imgs">
-			<li class="show"><a href="#"><img src="images/ye.jpg" alt="1"></a></li>
+			<li class="show"><a href="#"><img src="images/quan.jpg" alt="0"></a></li>
+			<li><a href="#"><img src="images/ye.jpg" alt="1"></a></li>
 			<li><a href="#"><img src="images/yu.jpg" alt="2"></a></li>
 			<li><a href="#"><img src="images/zhou.jpg" alt="3"></a></li>
 			<li><a href="#"><img src="images/wang.jpg" alt="4"></a></li>
 			<li><a href="#"><img src="images/huang.jpg" alt="5"></a></li>
+			<li><a href="#"><img src="images/xiao.jpg" alt="6"></a></li>
+			<li><a href="#"><img src="images/chu.jpg" alt="7"></a></li>
 		</ul>
 		<div class="arrows">
 			<span class="left">&lt;</span>
@@ -196,15 +187,22 @@
 			<li>3</li>
 			<li>4</li>
 			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
 		</ul>
 	</div>
 	<div id="carousel02" class="box">
-		<ul class="imgs">
-			<li class="show"><a href="#"><img src="images/xiao.jpg" alt="1"></a></li>
-			<li><a href="#"><img src="images/chu.jpg" alt="2"></a></li>
-			<li><a href="#"><img src="images/su.jpg" alt="3"></a></li>
-			<li><a href="#"><img src="images/sun.jpg" alt="4"></a></li>
-			<li><a href="#"><img src="images/fang.jpg" alt="5"></a></li>
+		<ul class="imgs" style="left: 0;">
+			<li class="show"><a href="#"><img src="images/guo.jpg" alt="00">
+				</a></li>
+			<li><a href="#"><img src="images/su.jpg" alt="8"></a></li>
+			<li><a href="#"><img src="images/zhangjiale.jpg" alt="9"></a></li>
+			<li><a href="#"><img src="images/zhang.jpg" alt="10"></a></li>
+			<li><a href="#"><img src="images/li.jpg" alt="11"></a></li>
+			<li><a href="#"><img src="images/sun.jpg" alt="12"></a></li>
+			<li><a href="#"><img src="images/tang.jpg" alt="13"></a></li>
+			<li><a href="#"><img src="images/fang.jpg" alt="14"></a></li>
 		</ul>
 		<div class="arrows">
 			<span class="left">&lt;</span>
@@ -216,6 +214,9 @@
 			<li>3</li>
 			<li>4</li>
 			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
 		</ul>
 	</div>
 	<script>
@@ -238,7 +239,7 @@
 			var n=btns.length; // 图片数量/按钮数量
 			var index=0; //当前显示的图片序号，0号开始，范围时[0,n-1]
 			var t=null; // 定时器变量/标识符
-			var s=3; // 自动轮播的时间间隔(秒)
+			var s=2; // 自动轮播的时间间隔(秒)
 			// 显示指定index对应的图片
 			function showImg (index) {
 				for(var i=0; i<n; i++) {
@@ -284,8 +285,70 @@
 			}
 			box.onmouseout(); // 执行一次mouseout操作
 		}
+		function lbt1(id){
+			// 轮播图显示区域
+			var box=document.getElementById(id);
+			// 图片列表
+			var imgs=box.getElementsByClassName('imgs')[0];
+			// 左箭头
+			var arrowL=box.getElementsByClassName('left')[0];
+			// 右箭头
+			var arrowR=box.getElementsByClassName('right')[0];
+			// 按钮容器
+			var dots=box.getElementsByClassName('dots')[0];
+			// 按钮列表
+			var btns=dots.getElementsByTagName('li');
+			var imgWidth=700; // 一幅图宽度
+			var n=btns.length; // 图片数量/按钮数量
+			var index=0; // 当前显示的图片序号，0号开始,范围是[0,n-1]
+			var t=null; // 定时器变量/标识符
+			var s=2; // 自动轮播的时间间隔(秒)
+			// 显示指定index对应的图片
+			function showImg (index) {
+				imgs.style.left=-1*index*imgWidth+'px';
+			}
+			// 指定index的按钮显示特殊样式
+			function showBtn (index) {
+				// 清楚全部按钮特殊样式
+				for(var i=0;i<btns.length;i++){
+					btns[i].removeAttribute('class');
+				}
+				// 设置该按钮特殊样式
+				btns[index].className='act';
+			}
+			// 设置右箭头点击事件
+			arrowR.onclick=function () {
+				index=(index<n-1)?index+1:0; // 序号的边界判断
+				showImg(index);
+				showBtn (index);
+			}
+			// s设置左箭头点击事件
+			arrowL.onclick=function () {
+				index=index>0?index-1:n-1; // 序号的边界判断
+				showImg(index);
+				showBtn (index);
+			}
+			// 设置所有按钮的点击事件
+			for(var i=0;i<btns.length;i++){
+				btns[i].idx=i;
+				btns[i].onclick=function () {
+					index=this.idx;
+					showImg(index);
+					showBtn(index);
+				}
+			}
+			// 鼠标进入轮播图区域时，停止自动轮播
+			box.onmouseover=function () {
+				clearInterval(t);
+			}
+			// 鼠标离开轮播图区域时，继续自动轮播
+			box.onmouseout=function () {
+				t=setInterval(arrowR.onclick, s*1000);
+			}
+			box.onmouseout(); // 执行一次mouseout操作，开启定时器
+		}
 		lbt('carousel01');
-		lbt('carousel02');
+		lbt1('carousel02');
 	</script>
 </body>
 </html>
