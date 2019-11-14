@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		#carousel01.box {
+			width: 700px;
+			height: 400px;
+			position: relative;
+			overflow: hidden;
+			border: 5px solid #000;
+			margin: 20px auto
+		}
+		#carousel01 .imgs {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#carousel01 .imgs li {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			z-index: -1;
+			transition: .5s linear;
+		}
+		#carousel01 .imgs .show {
+			opacity: 1;
+			z-index: 0;
+		}
+		#carousel01 .imgs img {
+			width: 700px;
+			height: 400px;
+			display: block;
+			/*vertical-align: middle;*/
+		}
+		#carousel01 .arrows span {
+			position: absolute;
+			top: 215px;
+			font-size: 25px;
+			vertical-align: middle;
+			color: #fff;
+			background: #000;
+			text-align: center;
+			width: 25px;
+			height: 30px;
+			line-height: 30px;
+			cursor: pointer;
+			opacity: 0;
+		}
+		#carousel01.box:hover .arrows span {
+			opacity: .5;
+		}
+		#carousel01.box .arrows span:hover {
+			opacity: 1;
+		}
+		#carousel01 .arrows .left {
+			left: 0;
+			border-radius: 0 20px 20px 0;
+		}
+		#carousel01 .arrows .right {
+			right: 0;
+			border-radius: 0 20px 20px 0;
+		}
+		#carousel01 .dots {
+			position: absolute;
+			bottom: 20px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		#carousel01 .dots li {
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			font-size: 14px;
+			text-align: center;
+			background: #777;
+			border-radius: 50%;
+			border: 2px solid #fff;
+			margin: 0 2px;
+			cursor: pointer;
+			transition: .5s linear;
+		}
+		#carousel01 .dots .act {
+			background: #000;
+			color: #fff;
+		}
+		#carousel02.box {
+			width: 700px;
+			height: 400px;
+			position: relative;
+			overflow: hidden;
+			border: 5px solid red;
+			margin: 20px auto
+		}
+		#carousel02 .imgs {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#carousel02 .imgs li {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			z-index: -1;
+			transition: .5s linear;
+		}
+		#carousel02 .imgs .show {
+			opacity: 1;
+			z-index: 0;
+		}
+		#carousel02 .imgs img {
+			width: 700px;
+			height: 400px;
+			display: block;
+			/*vertical-align: middle;*/
+		}
+		#carousel02 .arrows span {
+			position: absolute;
+			top: 215px;
+			font-size: 25px;
+			vertical-align: middle;
+			color: #fff;
+			background: #000;
+			text-align: center;
+			width: 25px;
+			height: 30px;
+			line-height: 30px;
+			cursor: pointer;
+			opacity: 0;
+		}
+		#carousel02.box:hover .arrows span {
+			opacity: .5;
+		}
+		#carousel02.box .arrows span:hover {
+			opacity: 1;
+		}
+		#carousel02 .arrows .left {
+			left: 0;
+			border-radius: 0 20px 20px 0;
+		}
+		#carousel02 .arrows .right {
+			right: 0;
+			border-radius: 0 20px 20px 0;
+		}
+		#carousel02 .dots {
+			position: absolute;
+			bottom: 20px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		#carousel02 .dots li {
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			font-size: 14px;
+			text-align: center;
+			background: gold;
+			border-radius: 50%;
+			border: 3px solid #fff;
+			margin: 0 2px;
+			cursor: pointer;
+			transition: .5s linear;
+		}
+		#carousel02 .dots .act {
+			background: red;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="carousel01" class="box">
+		<ul class="imgs">
+			<li class="show"><a href="#"><img src="images/ye.jpg" alt="1"></a></li>
+			<li><a href="#"><img src="images/yu.jpg" alt="2"></a></li>
+			<li><a href="#"><img src="images/zhou.jpg" alt="3"></a></li>
+			<li><a href="#"><img src="images/wang.jpg" alt="4"></a></li>
+			<li><a href="#"><img src="images/huang.jpg" alt="5"></a></li>
+		</ul>
+		<div class="arrows">
+			<span class="left">&lt;</span>
+			<span class="right">&gt;</span>
+		</div>
+		<ul class="dots">
+			<li class="act">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<div id="carousel02" class="box">
+		<ul class="imgs">
+			<li class="show"><a href="#"><img src="images/xiao.jpg" alt="1"></a></li>
+			<li><a href="#"><img src="images/chu.jpg" alt="2"></a></li>
+			<li><a href="#"><img src="images/su.jpg" alt="3"></a></li>
+			<li><a href="#"><img src="images/sun.jpg" alt="4"></a></li>
+			<li><a href="#"><img src="images/fang.jpg" alt="5"></a></li>
+		</ul>
+		<div class="arrows">
+			<span class="left">&lt;</span>
+			<span class="right">&gt;</span>
+		</div>
+		<ul class="dots">
+			<li class="act">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<script>
+		// 轮播图的主要工作就是调整图片列表的定位(或是显隐)。编写思路，获取index值，根据index值显示对应的图片和按钮
+		// 获取轮播图显示区域
+		function lbt(id) {
+			var box=document.getElementById(id);
+			// 图片列表区域
+			var imgsBox=box.getElementsByClassName('imgs')[0];
+			// 图片列表
+			var imgs=imgsBox.getElementsByTagName('li');
+			// 左箭头
+			var arrowL=box.getElementsByClassName('left')[0];
+			// 右箭头
+			var arrowR=box.getElementsByClassName('right')[0];
+			// 按钮容器
+			var dots=box.getElementsByClassName('dots')[0];
+			// 按钮列表
+			var btns=dots.getElementsByTagName('li');
+			var n=btns.length; // 图片数量/按钮数量
+			var index=0; //当前显示的图片序号，0号开始，范围时[0,n-1]
+			var t=null; // 定时器变量/标识符
+			var s=3; // 自动轮播的时间间隔(秒)
+			// 显示指定index对应的图片
+			function showImg (index) {
+				for(var i=0; i<n; i++) {
+					imgs[i].removeAttribute('class');
+				}
+				imgs[index].className='show';
+			}
+			// 指定index的按钮显示特殊样式
+			function showBtn (index) {
+				for (var i=0; i<btns.length; i++) {
+					btns[i].removeAttribute('class');
+				}
+				btns[index].className='act';
+			}
+			// 设置右箭头点击事件
+			arrowR.onclick=function () {
+				index=index<n-1?index+1:0; // 序号的边界判断
+				showImg(index);
+				showBtn(index);
+			}
+			// 设置左箭头点击事件
+			arrowL.onclick=function () {
+				index=index>0?index-1:n-1; // 序号的边界判断
+				showImg(index);
+				showBtn(index);
+			}
+			// 设置所有按钮的onmouseover事件
+			for(var i=0; i<btns.length; i++) {
+				btns[i].index=i;
+				btns[i].onmouseover=function () {
+					index=this.index;
+					showImg(index);
+					showBtn(index);
+				}
+			}
+			// 鼠标进入轮播图区域时，停止自动轮播
+			box.onmouseover=function () {
+					clearInterval(t);
+			}
+			// 鼠标离开轮播图区域时，继续自动轮播
+			box.onmouseout=function () {
+				t=setInterval(arrowR.onclick,s*1000);
+			}
+			box.onmouseout(); // 执行一次mouseout操作
+		}
+		lbt('carousel01');
+		lbt('carousel02');
+	</script>
+</body>
+</html>
